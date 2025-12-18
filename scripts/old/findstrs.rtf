@@ -1,0 +1,60 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 def findSTRs(amostra, tamanhoSTR):\
+  # print('Tamanho da amostra: ', len(amostra))\
+  # print('Tamanho dos str: ', tamanhoSTR)\
+  for i in range(len(amostra)):\
+    if i < len(amostra)-tamanhoSTR+1:\
+      strI = i\
+      strF = strI+tamanhoSTR\
+      strAmostra = amostra[strI:strF]\
+\
+      tandemI = i+tamanhoSTR\
+      tandemF = tandemI+tamanhoSTR\
+      tandem = ''\
+\
+      if tandemF <= len(amostra):\
+        tandem = amostra[tandemI:tandemF]\
+\
+      positivo = ''\
+      if strAmostra.upper() == tandem.upper():\
+        positivo = 'sim'\
+        message = f"posicao: \{i+1\}, str: \{str\} (de \{strI+1\} a \{strF\}), tandem: \{tandem\} (de \{tandemI+1\} a \{tandemF\}) => \{positivo\}"\
+        print(message)\
+\
+\
+import numpy as np\
+\
+\
+# BIG DATA\
+\
+# leitura de arquivo fasta - SimpleFastaParser\
+\
+from Bio.SeqIO.FastaIO import SimpleFastaParser\
+\
+count = 0\
+# sequencias_arquivo_sfp = []\
+sequencias_arquivo_sfp = ''\
+\
+with open(arquivo) as handle:\
+  for seq_id, seq in SimpleFastaParser(handle):\
+    # sequencias_arquivo_sfp.append(str(seq))\
+    sequencias_arquivo_sfp += str(seq)\
+    count += 1\
+    # print(seq)\
+    # print(seq_id)\
+    # print(len(seq))\
+\
+print(len(sequencias_arquivo_sfp))\
+\
+\
+\
+# s = "abcdefAAAAACCCCCAAAAAACCCCCCAAAAAGGGGGGGGTTT"\
+# print('123456789v123456789v123456789v1234567890123456789012345678901234567890')\
+# print(s)\
+findSTRs(sequencias_arquivo_sfp[:1000], 3)}

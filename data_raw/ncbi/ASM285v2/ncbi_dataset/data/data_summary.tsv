@@ -1,0 +1,3 @@
+Organism Scientific Name	Organism Common Name	Organism Qualifier	Taxonomy id	Assembly Name	Assembly Accession	Source	Annotation	Level	Contig N50	Size	Submission Date	Gene Count	BioProject	BioSample
+Aspergillus niger			5061	ASM285v2	GCA_000002855.2	GenBank	Annotation submitted by DSM, The Netherlands	Scaffold	114002	33975768	2007-04-11	14532	PRJNA19275	SAMEA3283178
+Aspergillus niger			5061	ASM285v2	GCF_000002855.4	RefSeq	Annotation submitted by DSM, The Netherlands	Scaffold	114002	33975768	2007-04-11	14404	PRJNA19275	SAMEA3283178
